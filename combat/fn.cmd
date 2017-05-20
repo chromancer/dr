@@ -1,0 +1,201 @@
+echo
+echo * * *
+echo * * * Melee fighting loop with periodic experience check.
+echo * * * First argument: skill to check.
+echo * * * Second argument: creature to loot.
+echo * * *
+echo
+
+setvariable Period 0
+
+ANALYZE:
+if Period == 5 goto CheckExp
+calculate Period add 1
+
+match JAB landing a jab
+match FEINT landing a feint
+match DRAW landing a draw
+match CHOP landing a chop
+match SLICE landing a slice
+match SWEEP landing a sweep
+match LUNGE landing a lunge
+match THRUST landing a thrust
+match SLAM landing a slam
+match SWING landing a swing
+match BASH landing a bash
+match KICK landing a kick
+match SLAP landing a slap
+match GOUGE landing a gouge
+match ELBOW landing an elbow
+match CLAW landing a claw
+match PUNCH landing a punch
+match FACENEXT Analyze what
+match ANALYZE fail to find
+match ANALYZE ...wait
+match ANALYZE You are still stunned.
+match ADVANCE You must be closer to use tactical abilities on your opponent
+MATCH FACENEXT is already quite dead.
+put analyze %2
+matchWAIT
+
+FACE:
+	put face next
+
+ADVANCE:
+	pausepart 2
+	put advance
+	pausepart 2
+	goto ANALYZE
+
+THRUST:
+	save "thrust"
+	goto ATTACK
+
+SLAM:
+	save "slam"
+	goto ATTACK
+
+SWING:
+	save "swing"
+	goto ATTACK
+
+BASH:
+	save "bash"
+	goto ATTACK
+
+KICK:
+	save "kick"
+	goto ATTACK
+
+SLAP:
+	save "slap"
+	goto ATTACK
+
+GOUGE:
+	save "gouge"
+	goto ATTACK
+
+ELBOW:
+	save "elbow"
+	goto ATTACK
+
+CLAW:
+	save "claw"
+	goto ATTACK
+
+PUNCH:
+	save "punch"
+	goto ATTACK
+
+LUNGE:
+	save "lunge"
+	goto ATTACK
+
+
+SWEEP:
+	save "sweep"
+	goto ATTACK
+
+SLICE:
+	save "slice"
+	goto ATTACK
+
+CHOP:
+	save "chop"
+	goto ATTACK
+
+DRAW:
+	save "draw"
+	goto ATTACK
+
+JAB:
+	save "jab"
+	goto ATTACK
+
+FEINT:
+	save "feint"
+	goto ATTACK
+
+ATTACK:
+	match ArrangeDead screams one last time and lies still
+	match ArrangeDead falls to the ground and lies still
+	match ArrangeDead shudders and then suddenly stops all movement
+	match ArrangeDead collapses with a heavy thud
+	match ArrangeDead growls one last time and collapses
+	match ArrangeDead until it ceases all movement
+	match ArrangeDead lets loose a blood-curdling howl and falls into a heap
+	match ArrangeDead lets loose a blood-curdling howl and goes still
+	match ArrangeDead thrashes about wildly for a few seconds, then lies still
+	match ArrangeDead shudders, then goes limp
+	match ArrangeDead coils and uncoils rapidly before expiring
+	match ArrangeDead closing its eyes forever
+	match ArrangeDead growls low and dies
+	match ArrangeDead and lies still
+	match ArrangeDead screams and collapses
+	match WaitAnalyze if you used a melee weapon
+	match RANGE You aren't close enough
+	match ANALYZE Roundtime
+	match ATTACK ...wait
+	put %s
+	matchwait
+
+WaitAnalyze:
+	pause 10
+	goto ANALYZE
+
+RANGE:
+	waitfor melee
+	goto ATTACK
+
+FACENEXT:
+	match HOLD nothing else
+	match ANALYZE you turn to
+	put face next
+	matchwait 3
+
+HOLD:
+	match ANALYZE melee range on you
+	match ANALYZE balanced and
+	match ANALYZE balance and
+	echo
+	echo * * * Holding until next attacker reaches melee range...
+	echo
+	matchwait 10
+	goto HOLD
+
+ArrangeDead:
+	match ANALYZE Arrange what?
+	match ArrangeDead You arrange
+	match ArrangeDead You begin to arrange
+	match ArrangeDead You continue arranging
+	match SkinDead You complete arranging
+	put arrange for skin
+	matchwait 3
+
+SkinDead:
+	put skin
+	pausetext 2 roundtime
+	put loot %2
+	pause 2
+	goto ANALYZE
+
+CheckExp:
+	echo * * * Skill for current weapon.
+	match CheckExpExit mind lock
+	match CheckExpExit nearly locked
+	match CheckExpContinue EXP HELP
+	put sk %1
+	matchwait 3
+
+CheckExpContinue:
+	calculate Period clear
+	pausepart 5
+	goto ANALYZE
+
+CheckExpExit:
+	echo
+	echo * * *
+	echo * * * The skill designated "%1" is locked.
+	echo * * *
+	echo
+	exit
