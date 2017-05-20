@@ -1,8 +1,6 @@
 echo
 echo * * *
 echo * * * Melee fighting loop with periodic experience check.
-echo * * * First argument: skill to check.
-echo * * * Second argument: creature to loot.
 echo * * *
 echo
 
