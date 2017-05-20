@@ -5,6 +5,7 @@ echo * * *
 waitfor
 
 Center:
+match SunError is too close to the sun to be properly viewed
 match PainError The pain is too much
 match NightError foiled by the darkness
 match DayError foiled by the daylight
@@ -69,6 +70,10 @@ goto Exit
 
 PainError:
 echo * * * Wounds must be healed before telescope use.
+goto Exit
+
+SunError:
+echo * * * That heavenly body is too close to the sun.
 goto Exit
 
 LabelError:
