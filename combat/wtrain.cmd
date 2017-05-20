@@ -12,7 +12,7 @@
 	setvariable TargetMana 12
 
 	setvariable DebiSpell dazzle
-	setvariable DebiMana 9
+	setvariable DebiMana 10
 
 	setvariable UsedCambrinth armband
 

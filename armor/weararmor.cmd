@@ -1,5 +1,6 @@
 weararmor:
 
+	pause 1
 	echo * * * Wearing armor.
 	put get net
 	put wear net
