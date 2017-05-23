@@ -38,7 +38,7 @@ goto Attack
 
 Debilitate:
 calculate Period add 1
-put prep sleep 8
+put prep sleep 10
 waitfor You feel fully prepared
 put cast
 pause 2

@@ -20,7 +20,7 @@ Position:
 Begin:
 
 	pause 1
-	run perform scales off-key
+	run perform folk off-key
 
 Scholarship:
 

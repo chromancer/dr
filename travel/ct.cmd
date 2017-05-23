@@ -225,7 +225,6 @@ gra:
 	put look
 	matchwait
 
-
 forge:
 forg:
 for:
@@ -254,6 +253,18 @@ alt:
 	match academy2bank A side entrance to the Academy, in the form of a low, bronze gate
 	match EndScript [Resurrection Creche, Li Stil rae Kwego ia Kweld]
 	match bank2altar2 three tall towers standing guard over the orb of the Main Temple.
+	match PathToNode Obvious paths:
+	match PathToNode Obvious exits:
+	put look
+	matchwait
+
+river:
+rive:
+riv:
+	match bank2river The granite and marble facade of the First Provincial Bank
+	match empath2bank The whitewashed building before you is stark and functional
+	match academy2bank A side entrance to the Academy, in the form of a low, bronze gate
+	match EndScript [Southern Trade Route, Segoltha South Bank]
 	match PathToNode Obvious paths:
 	match PathToNode Obvious exits:
 	put look
@@ -528,6 +539,8 @@ PathToNode:
 
 	match kssarh2moonmage A soft sitting mat covers the floor entirely, save for a narrow strip
 	match rolagi2moonmage You also see the silvery-white shard Rolagi
+
+	match river2bank [Southern Trade Route, Segoltha South Bank]
 
 	match vault2bank A sturdy vault, set in the back wall, stands ready for your use
 
@@ -1216,6 +1229,185 @@ move nw
 move sw
 move w
 move climb stair
+goto %1
+
+bank2river:
+pause
+move sw
+move go Longbow Bridge
+move sw
+move w
+move w
+move w
+move w
+move sw
+move go wooden pier
+
+CROSSINGFERRYSOUTH:
+put stand
+pause
+put go ferry
+match WAITFORCROSSINGFERRYSOUTH wait for the next one.
+match WAITFORCROSSINGFERRYSOUTH until the next one arrives.
+match WAITFORCROSSINGFERRYSOUTH I could not find what you were referring to.
+match WAITFORCROSSINGFERRYSOUTH What were you referring to?
+match WAITFORCROSSINGFERRYSOUTH There is no ferry here to go aboard.
+match WAITONCROSSINGFERRYSOUTH You hand him your
+match WAITONCROSSINGFERRYSOUTH The Captain gives you a little nod
+match WAITONCROSSINGFERRYSOUTH You silently slip aboard,
+match WAITONCROSSINGFERRYSOUTH But I see you're pretty young
+match GETMONEYCROSSINGFERRYSOUTH You haven't got enough
+matchwait
+
+WAITFORCROSSINGFERRYSOUTH:
+ECHO * * * Waiting on the ferry.
+waitfor pulls into the
+goto CROSSINGFERRYSOUTH
+
+GETMONEYCROSSINGFERRYSOUTH:
+ECHO * * * Getting the ferry toll from the bank.
+pause
+move go Lemicus Square
+move ne
+move e
+move e
+move e
+move e
+move ne
+move go Longbow Bridge
+move ne
+move go Provincial Bank
+move go teller window
+put withdraw 70 c k
+pause
+move out
+move out
+goto bank2river
+
+WAITONCROSSINGFERRYSOUTH:
+;put hide
+pause
+ECHO * * * Waiting on the ferry to arrive on the south bank of the Segoltha.
+pause
+waitfor crew ties the ferry off.
+put stand
+pause
+move go dock
+goto %1
+
+river2bank:
+cro-exp1:
+match seg-cro Athletics:
+match CROSSINGFERRYNORTH EXP HELP
+put exp survival 300
+matchwait
+
+seg-cro:
+move s
+move go foot
+move w
+move w
+move w
+move w
+move w
+move n
+move n
+
+seg-north:
+match seg-north You wade
+match roomcheck You can't swim in that direction.
+match seg-north You swim
+match seg-north You slap
+match seg-north You struggle
+match seg-north You flounder
+match seg-north make much headway
+match seg-north ...wait
+match seg-north type ahead
+put swim north
+matchwait
+
+roomcheck:
+match seg-north-current Obvious paths: east, west
+match seg-north-end Obvious paths: east, southeast, south, southwest, west.
+put look
+matchwait
+
+seg-north-current:
+put swim west
+waitfor Roundtime
+goto seg-north
+
+seg-north-end:
+move climb bank
+move nw
+move go grass
+move ne
+move n
+move ne
+move n
+move nw
+move n
+goto %1
+
+CROSSINGFERRYNORTH:
+put stand
+pause
+put go ferry
+match WAITFORCROSSINGFERRYNORTH wait for the next one.
+match WAITFORCROSSINGFERRYNORTH until the next one arrives.
+match WAITFORCROSSINGFERRYNORTH I could not find what you were referring to.
+match WAITFORCROSSINGFERRYNORTH What were you referring to?
+match WAITFORCROSSINGFERRYNORTH There is no ferry here to go aboard.
+match WAITONCROSSINGFERRYNORTH You hand him your
+match WAITONCROSSINGFERRYNORTH The Captain gives you a little nod
+match WAITONCROSSINGFERRYNORTH You silently slip aboard,
+match WAITONCROSSINGFERRYNORTH But I see you're pretty young
+match GETMONEYCROSSINGFERRYNORTH You haven't got enough
+matchwait
+
+WAITFORCROSSINGFERRYNORTH:
+ECHO
+ECHO * * * Waiting for the ferry north across the Segoltha.
+echo * * * This will cost 35 copper kronars.
+ECHO
+put wealth kronar
+waitfor pulls into the
+goto CROSSINGFERRYNORTH
+
+GETMONEYCROSSINGFERRYNORTH:
+ECHO
+ECHO * * * Not enough money on hand for the ferry.
+echo * * * Exiting and ringing a bell.
+ECHO
+EXIT
+
+WAITONCROSSINGFERRYNORTH:
+;put hide
+pause
+ECHO
+ECHO * * * Riding the ferry north across the mighty Segoltha River toward The Crossing, heart of the Five Provinces
+ECHO
+pause
+waitfor crew ties the ferry off.
+put stand
+pause
+move go dock
+move go square
+move ne
+move e
+move e
+move e
+move e
+move ne
+move go bridge
+move ne
+ECHO
+ECHO ===================
+ECHO * * * THE CROSSING aka River Crossing
+ECHO * * * Capitol of the province of Zoluren
+ECHO * * * Located where the Oxenwaithe River crosses the mighty Segoltha River.
+ECHO ===================
+ECHO
 goto %1
 
 wg2outcrop:

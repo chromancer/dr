@@ -28,11 +28,18 @@ Target:
 if Period == 5 goto CheckExp
 calculate Period add 1
 match ReleaseSpell Your target pattern dissipates
+match ReleaseSpell with the loss of your target
 match ReleaseSpell There is nothing else to face
 match ReleaseSpell But you're already preparing a spell
+match FaceNext You're not engaged to anything
 match Cast Your formation of a targeting pattern
 put target %1 %2
 matchwait
+
+FaceNext:
+put face next
+pause 1
+goto Target
 
 Cast:
 put cast
