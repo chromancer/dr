@@ -1285,7 +1285,6 @@ move out
 goto bank2river
 
 WAITONCROSSINGFERRYSOUTH:
-;put hide
 pause
 ECHO * * * Waiting on the ferry to arrive on the south bank of the Segoltha.
 pause
@@ -1382,11 +1381,8 @@ ECHO
 EXIT
 
 WAITONCROSSINGFERRYNORTH:
-;put hide
 pause
-ECHO
-ECHO * * * Riding the ferry north across the mighty Segoltha River toward The Crossing, heart of the Five Provinces
-ECHO
+ECHO * * * Riding the ferry north across the Segoltha toward the Crossing.
 pause
 waitfor crew ties the ferry off.
 put stand
@@ -1401,13 +1397,6 @@ move e
 move ne
 move go bridge
 move ne
-ECHO
-ECHO ===================
-ECHO * * * THE CROSSING aka River Crossing
-ECHO * * * Capitol of the province of Zoluren
-ECHO * * * Located where the Oxenwaithe River crosses the mighty Segoltha River.
-ECHO ===================
-ECHO
 goto %1
 
 wg2outcrop:

@@ -177,6 +177,7 @@ goto trap_ident
 
 get_lockpick:
 pause 1
+put get lockpick
 pause 1
 goto lock_ident
 matchwait
@@ -277,6 +278,7 @@ echo * * *
 goto end2
 fill_s:
 pause 1
+put stow my lockpick
 pause 1
 put disman my %box focus
 pause 1
@@ -293,6 +295,8 @@ pause 1
 goto %box
 end2:
 put stow my %box
+pause 1
+put stow my lockpick
 pause 2
 call weararmor
 echo * * * Script ending.
@@ -300,6 +304,9 @@ exit
 
 AddExpStop:
 put stow my %box
+pause 1
+put stow my lockpick
+pause 1
 call weararmor
 echo * * *
 echo * * * Experience accrued, script ending.

@@ -31,10 +31,15 @@ match ReleaseSpell Your target pattern dissipates
 match ReleaseSpell with the loss of your target
 match ReleaseSpell There is nothing else to face
 match ReleaseSpell But you're already preparing a spell
+match PauseTarget What are you trying to attack
 match FaceNext You're not engaged to anything
 match Cast Your formation of a targeting pattern
 put target %1 %2
 matchwait
+
+PauseTarget:
+pause 2
+goto Target
 
 FaceNext:
 put face next
@@ -88,6 +93,7 @@ match Target range on you
 match Target balanced and
 match Target balance and
 match Target balanced with
+match Target balance with
 match Target advance on you
 echo * * * TM is searching for targets...
 matchwait 20

@@ -28,13 +28,15 @@ match ELBOW landing an elbow
 match CLAW landing a claw
 match PUNCH landing a punch
 match FACENEXT Analyze what
+match ANALYZE Face what
 match ANALYZE fail to find
 match ANALYZE ...wait
 match ANALYZE You are still stunned.
+match ANALYZE What are you trying to attack
 match ADVANCE You must be closer to use tactical abilities on your opponent
 MATCH FACENEXT is already quite dead.
 put analyze %2
-matchWAIT
+matchwait
 
 FACE:
 	put face next
@@ -134,6 +136,8 @@ ATTACK:
 	match RANGE You aren't close enough
 	match ANALYZE Roundtime
 	match ATTACK ...wait
+	match ATTACK Face what
+	match ATTACK What are you trying to attack?
 	put %s
 	matchwait
 
@@ -155,6 +159,8 @@ HOLD:
 	match ANALYZE melee range on you
 	match ANALYZE balanced and
 	match ANALYZE balance and
+	match analyze balanced with
+	match analyze balance with
 	echo
 	echo * * * Holding until next attacker reaches melee range...
 	echo

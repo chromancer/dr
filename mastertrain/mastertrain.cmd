@@ -20,7 +20,7 @@ Position:
 Begin:
 
 	pause 1
-	run perform folk off-key
+	run perform folk quiet
 
 Scholarship:
 

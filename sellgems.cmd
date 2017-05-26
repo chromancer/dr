@@ -1,5 +1,15 @@
+setvariable gemvessel [dark pouch]
+
+if_1 goto SetSpecialVessel
+goto Begin
+
+SetSpecialVessel:
+setvariable gemvessel %1
+
+Begin:
+echo * * * Selling gems from '%gemvessel'.
 bar:
-put get bar from my dark pouch
+put get bar from my %gemvessel
 match bar ...wait
 match bar2 you get
 match nugget refer
@@ -13,7 +23,7 @@ match nugget refer
 matchwait
 
 nugget:
-put get nugget from my dark pouch
+put get nugget from my %gemvessel
 match nugget ...wait
 match nugget2 you get
 match gem refer
@@ -27,7 +37,7 @@ match gem refer
 matchwait
 
 gem:
-put get gem from my dark pouch
+put get gem from my %gemvessel
 match gem ...wait
 match gem2 you get
 match agate refer
@@ -41,7 +51,7 @@ match agate refer
 matchwait
 
 agate:
-put get agate from my dark pouch
+put get agate from my %gemvessel
 match agate ...wait
 match agate2 you get
 match alexandrite refer
@@ -55,7 +65,7 @@ match alexandrite refer
 matchwait
 
 alexandrite:
-put get alexandrite from my dark pouch
+put get alexandrite from my %gemvessel
 match alexandrite ...wait
 match alexandrite2 you get
 match amber refer
@@ -69,7 +79,7 @@ match amber refer
 matchwait
 
 amber:
-put get amber from my dark pouch
+put get amber from my %gemvessel
 match amber ...wait
 match amber2 you get
 match amethyst refer
@@ -83,7 +93,7 @@ match amethyst refer
 matchwait
 
 amethyst:
-put get amethyst from my dark pouch
+put get amethyst from my %gemvessel
 match amethyst ...wait
 match amethyst2 you get
 match andalusite refer
@@ -97,7 +107,7 @@ match andalusite refer
 matchwait
 
 andalusite:
-put get andalusite from my dark pouch
+put get andalusite from my %gemvessel
 match andalusite ...wait
 match andalusite2 you get
 match aquamarine refer
@@ -111,7 +121,7 @@ match aquamarine refer
 matchwait
 
 aquamarine:
-put get aquamarine from my dark pouch
+put get aquamarine from my %gemvessel
 match aquamarine ...wait
 match aquamarine2 you get
 match beryl refer
@@ -125,7 +135,7 @@ match beryl refer
 matchwait
 
 beryl:
-put get beryl from my dark pouch
+put get beryl from my %gemvessel
 match beryl ...wait
 match beryl2 you get
 match bloodstone refer
@@ -139,7 +149,7 @@ match bloodstone refer
 matchwait
 
 bloodstone:
-put get bloodstone from my dark pouch
+put get bloodstone from my %gemvessel
 match bloodstone ...wait
 match bloodstone2 you get
 match carnelian refer
@@ -153,7 +163,7 @@ match carnelian refer
 matchwait
 
 carnelian:
-put get carnelian from my dark pouch
+put get carnelian from my %gemvessel
 match carnelian ...wait
 match carnelian2 you get
 match chakrel refer
@@ -167,7 +177,7 @@ match chakrel refer
 matchwait
 
 chakrel:
-put get chakrel from my dark pouch
+put get chakrel from my %gemvessel
 match chakrel ...wait
 match chakrel2 you get
 match chalcedony refer
@@ -181,7 +191,7 @@ match chalcedony refer
 matchwait
 
 chalcedony:
-put get chalcedony from my dark pouch
+put get chalcedony from my %gemvessel
 match chalcedony ...wait
 match chalcedony2 you get
 match chrysoberyl refer
@@ -195,7 +205,7 @@ match chrysoberyl refer
 matchwait
 
 chrysoberyl:
-put get chrysoberyl from my dark pouch
+put get chrysoberyl from my %gemvessel
 match chrysoberyl ...wait
 match chrysoberyl2 you get
 match chrysoprase refer
@@ -209,7 +219,7 @@ match chrysoprase refer
 matchwait
 
 chrysoprase:
-put get chrysoprase from my dark pouch
+put get chrysoprase from my %gemvessel
 match chrysoprase ...wait
 match chrysoprase2 you get
 match citrine refer
@@ -223,7 +233,7 @@ match citrine refer
 matchwait
 
 citrine:
-put get citrine from my dark pouch
+put get citrine from my %gemvessel
 match citrine ...wait
 match citrine2 you get
 match coral refer
@@ -237,7 +247,7 @@ match coral refer
 matchwait
 
 coral:
-put get coral from my dark pouch
+put get coral from my %gemvessel
 match coral ...wait
 match coral2 you get
 match crystal refer
@@ -251,7 +261,7 @@ match crystal refer
 matchwait
 
 crystal:
-put get crystal from my dark pouch
+put get crystal from my %gemvessel
 match crystal ...wait
 match crystal2 you get
 match diamond refer
@@ -265,7 +275,7 @@ match diamond refer
 matchwait
 
 diamond:
-put get diamond from my dark pouch
+put get diamond from my %gemvessel
 match diamond ...wait
 match diamond2 you get
 match diopside refer
@@ -279,7 +289,7 @@ match diopside refer
 matchwait
 
 diopside:
-put get diopside from my dark pouch
+put get diopside from my %gemvessel
 match diopside ...wait
 match diopside2 you get
 match dragonstear refer
@@ -293,7 +303,7 @@ match dragonstear refer
 matchwait
 
 dragonstear:
-put get dragon's tear from my dark pouch
+put get dragon's tear from my %gemvessel
 match dragonstear ...wait
 match dragonstear2 you get
 match emerald refer
@@ -307,7 +317,7 @@ match emerald refer
 matchwait
 
 emerald:
-put get emerald from my dark pouch
+put get emerald from my %gemvessel
 match emerald ...wait
 match emerald2 you get
 match garnet refer
@@ -321,7 +331,7 @@ match garnet refer
 matchwait
 
 garnet:
-put get garnet from my dark pouch
+put get garnet from my %gemvessel
 match garnet ...wait
 match garnet2 you get
 match glowstone refer
@@ -335,7 +345,7 @@ match glowstone refer
 matchwait
 
 glowstone:
-put get glowstone from my dark pouch
+put get glowstone from my %gemvessel
 match glowstone ...wait
 match glowstone2 you get
 match hematite refer
@@ -349,7 +359,7 @@ match hematite refer
 matchwait
 
 hematite:
-put get hematite from my dark pouch
+put get hematite from my %gemvessel
 match hematite ...wait
 match hematite2 you get
 match iolite refer
@@ -363,7 +373,7 @@ match iolite refer
 matchwait
 
 iolite:
-put get iolite from my dark pouch
+put get iolite from my %gemvessel
 match iolite ...wait
 match iolite2 you get
 match ivory refer
@@ -377,7 +387,7 @@ match ivory refer
 matchwait
 
 ivory:
-put get ivory from my dark pouch
+put get ivory from my %gemvessel
 match ivory ...wait
 match ivory2 you get
 match jade refer
@@ -391,7 +401,7 @@ match jade refer
 matchwait
 
 jade:
-put get jade from my dark pouch
+put get jade from my %gemvessel
 match jade ...wait
 match jade2 you get
 match kunzite refer
@@ -405,7 +415,7 @@ match kunzite refer
 matchwait
 
 kunzite:
-put get kunzite from my dark pouch
+put get kunzite from my %gemvessel
 match kunzite ...wait
 match kunzite2 you get
 match lapislazuli refer
@@ -419,7 +429,7 @@ match lapislazuli refer
 matchwait
 
 lapislazuli:
-put get lapis lazuli from my dark pouch
+put get lapis lazuli from my %gemvessel
 match lapislazuli ...wait
 match lapislazuli2 you get
 match moonstone refer
@@ -433,7 +443,7 @@ match moonstone refer
 matchwait
 
 moonstone:
-put get moonstone from my dark pouch
+put get moonstone from my %gemvessel
 match moonstone ...wait
 match moonstone2 you get
 match morganite refer
@@ -447,7 +457,7 @@ match morganite refer
 matchwait
 
 morganite:
-put get morganite from my dark pouch
+put get morganite from my %gemvessel
 match morganite ...wait
 match morganite2 you get
 match onyx refer
@@ -461,7 +471,7 @@ match onyx refer
 matchwait
 
 onyx:
-put get onyx from my dark pouch
+put get onyx from my %gemvessel
 match onyx ...wait
 match onyx2 you get
 match opal refer
@@ -475,7 +485,7 @@ match opal refer
 matchwait
 
 opal:
-put get opal from my dark pouch
+put get opal from my %gemvessel
 match opal ...wait
 match opal2 you get
 match pearl refer
@@ -489,7 +499,7 @@ match pearl refer
 matchwait
 
 pearl:
-put get pearl from my dark pouch
+put get pearl from my %gemvessel
 match pearl ...wait
 match pearl2 you get
 match pebble refer
@@ -503,7 +513,7 @@ match pebble refer
 matchwait
 
 pebble:
-put get pebble from my dark pouch
+put get pebble from my %gemvessel
 match pebble ...wait
 match pebble2 you get
 match peridot refer
@@ -517,7 +527,7 @@ match peridot refer
 matchwait
 
 peridot:
-put get peridot from my dark pouch
+put get peridot from my %gemvessel
 match peridot ...wait
 match peridot2 you get
 match quartz refer
@@ -531,7 +541,7 @@ match quartz refer
 matchwait
 
 quartz:
-put get quartz from my dark pouch
+put get quartz from my %gemvessel
 match quartz ...wait
 match quartz2 you get
 match ruby refer
@@ -545,7 +555,7 @@ match ruby refer
 matchwait
 
 ruby:
-put get ruby from my dark pouch
+put get ruby from my %gemvessel
 match ruby ...wait
 match ruby2 you get
 match sapphire refer
@@ -559,7 +569,7 @@ match sapphire refer
 matchwait
 
 sapphire:
-put get sapphire from my dark pouch
+put get sapphire from my %gemvessel
 match sapphire ...wait
 match sapphire2 you get
 match spinel refer
@@ -573,7 +583,7 @@ match spinel refer
 matchwait
 
 spinel:
-put get spinel from my dark pouch
+put get spinel from my %gemvessel
 match spinel ...wait
 match spinel2 you get
 match star-stone refer
@@ -587,7 +597,7 @@ match star-stone refer
 matchwait
 
 star-stone:
-put get star-stone from my dark pouch
+put get star-stone from my %gemvessel
 match star-stone ...wait
 match star-stone2 you get
 match sunstone refer
@@ -601,7 +611,7 @@ match sunstone refer
 matchwait
 
 sunstone:
-put get sunstone from my dark pouch
+put get sunstone from my %gemvessel
 match sunstone ...wait
 match sunstone2 you get
 match tanzanite refer
@@ -615,7 +625,7 @@ match tanzanite refer
 matchwait
 
 tanzanite:
-put get tanzanite from my dark pouch
+put get tanzanite from my %gemvessel
 match tanzanite ...wait
 match tanzanite2 you get
 match topaz refer
@@ -629,7 +639,7 @@ match topaz refer
 matchwait
 
 topaz:
-put get topaz from my dark pouch
+put get topaz from my %gemvessel
 match topaz ...wait
 match topaz2 you get
 match tourmaline refer
@@ -643,7 +653,7 @@ match tourmaline refer
 matchwait
 
 tourmaline:
-put get tourmaline from my dark pouch
+put get tourmaline from my %gemvessel
 match tourmaline ...wait
 match tourmaline2 you get
 match tsavorite refer
@@ -657,7 +667,7 @@ match tsavorite refer
 matchwait
 
 tsavorite:
-put get tsavorite from my dark pouch
+put get tsavorite from my %gemvessel
 match tsavorite ...wait
 match tsavorite2 you get
 match turquoise refer
@@ -671,7 +681,7 @@ match turquoise refer
 matchwait
 
 turquoise:
-put get turquoise from my dark pouch
+put get turquoise from my %gemvessel
 match turquoise ...wait
 match turquoise2 you get
 match zircon refer
@@ -685,7 +695,7 @@ match zircon refer
 matchwait
 
 zircon:
-put get zircon from my dark pouch
+put get zircon from my %gemvessel
 match zircon ...wait
 match zircon2 you get
 match egg refer
@@ -699,7 +709,7 @@ match egg refer
 matchwait
 
 egg:
-put get egg from my dark pouch
+put get egg from my %gemvessel
 match egg ...wait
 match egg2 you get
 match tooth refer
@@ -713,7 +723,7 @@ match tooth refer
 matchwait
 
 tooth:
-put get tooth from my dark pouch
+put get tooth from my %gemvessel
 match tooth ...wait
 match tooth2 you get
 match end refer
@@ -727,6 +737,9 @@ match end refer
 matchwait
 
 end:
-put look in my dark pouch
+put look in my %gemvessel
 pause
 put wealth
+pause
+echo * * * Done.
+exit

@@ -4,8 +4,8 @@ loop:
 put prep %1 %2
 waitfor fully prepared to cast your spell
 
+cast:
 put cast %3
-matchwait 1
 goto expcheck
 
 expcheck:
@@ -24,5 +24,6 @@ echo
 exit
 
 EarlyEnd:
-echo * * * Mechanical lore was overridden and ended early. Exiting...
+put release spell
+echo * * * Debilitation was overridden and ended early. Exiting...
 exit

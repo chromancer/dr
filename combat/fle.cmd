@@ -56,7 +56,7 @@ echo
 exit
 
 ArrangeDead:
-match CheckForEnemy Arrange what?
+match HoldingForEnemy Arrange what?
 match ArrangeDead You arrange
 match ArrangeDead You begin to arrange
 match ArrangeDead You continue arranging
@@ -69,18 +69,16 @@ put skin
 pausetext 2 roundtime
 put loot %2
 pause 2
-goto CheckForEnemy
-
-HoldingForEnemy:
-echo * * * No valid targets: holding for range.
-waitfor range on you
 goto Attack
 
-CheckForEnemy:
-echo * * * Target check.
-match Attack You (
-match Attack You turn
-put assess silently
-put face next
-matchwait 2
-goto HoldingForEnemy
+HoldingForEnemy:
+	match ANALYZE melee range on you
+	match ANALYZE balanced and
+	match ANALYZE balance and
+	match analyze balanced with
+	match analyze balance with
+	echo
+	echo * * * Searching for targets...
+	echo
+	matchwait 10
+	goto HOLD

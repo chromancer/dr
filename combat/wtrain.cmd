@@ -9,7 +9,7 @@
 	setvariable SmallBlunt bola
 
 	setvariable TargetSpell pd
-	setvariable TargetMana 12
+	setvariable TargetMana 13
 
 	setvariable DebiSpell dazzle
 	setvariable DebiMana 10
