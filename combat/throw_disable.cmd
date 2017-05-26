@@ -1,12 +1,13 @@
 echo
 echo * * *
-echo * * * Thrown weapon with disabling spell and period experience check.
+echo * * * Thrown weapon (with optional disabling spell and) period experience check.
 echo * * *
 echo
 
 setvariable Period 0
 
 matchstore Arrange screams one last time and lies still
+matchstore Arrange shudders and then turns belly up
 matchstore Arrange falls to the ground and lies still
 matchstore Arrange shudders and then suddenly stops all movement
 matchstore Arrange collapses with a heavy thud
@@ -24,7 +25,8 @@ matchstore HoldingForEnemy There is nothing else to face
 matchstore GetSpear Roundtime
 
 Attack:
-if Period == 0 goto Debilitate
+if Period == 0 goto CheckDebilitate
+AttackBranch:
 if Period == 4 goto CheckExp
 calculate Period add 1
 put lob
@@ -35,6 +37,10 @@ GetSpear:
 put get %1
 pausepart 5
 goto Attack
+
+CheckDebilitate:
+if_3 goto Debilitate
+goto AttackBranch
 
 Debilitate:
 calculate Period add 1
@@ -82,7 +88,7 @@ put skin
 pausetext 2 roundtime
 
 Loot:
-put loot %3
+put loot
 pause 1
 
 GetThrown:
@@ -93,6 +99,10 @@ HoldingForEnemy:
 match Attack melee range on you
 match Attack balanced and
 match Attack balance and
+match Attack balance with
+match Attack balanced with
+echo
 echo * * * Holding until next attacker reaches melee range...
+echo
 matchwait 7
 goto HoldingForEnemy

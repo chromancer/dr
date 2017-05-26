@@ -10,14 +10,14 @@ matchstore firearrow You think you have your
 put stance evasion
 
 loadarrow:
-save "aimarrow"
 put load
 pausetext 2 roundtime
+
+aimarrow:
 put aim
 storewait
 
 firearrow:
-save "loadarrow"
 put fire
 storewait 1
 
@@ -30,8 +30,17 @@ put sk bow
 matchwait
 
 waitforattack:
-waitfor range on you
-goto loadarrow
+	match aimarrow melee range on you
+	match aimarrow balanced and
+	match aimarrow balance and
+	match aimarrow balanced with
+	match aimarrow balance with
+	echo
+	echo * * * Holding until next attacker appears...
+	echo
+	matchwait 10
+	goto waitforattack
+
 
 exit:
 echo

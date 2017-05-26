@@ -42,7 +42,7 @@ StanceChange:
 
 LightThrown:
 	put get my %LightThrown
-	callwith throw_disable %LightThrown lt
+	callwith throw_disable %LightThrown lt yes
 	put stow my %LightThrown
 	pause 2
 
@@ -64,7 +64,7 @@ Brawling:
 HeavyThrown:
 
 	put get my %HeavyThrown
-	callwith throw_disable %HeavyThrown ht
+	callwith throw_disable %HeavyThrown ht yes
 	put stow my %HeavyThrown
 	pausetext 3 You stow
 
