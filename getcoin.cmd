@@ -8,6 +8,7 @@ getcoin:
 match getcoin You pick up
 match exit You are already holding that
 match exit You pull a
+match exit What were you referring to
 put get coin
 matchwait
 
