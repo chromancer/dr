@@ -66,6 +66,20 @@ asemat:
 asema:
 asem:
 ase:
+intelligence:
+intelligenc:
+intelligen:
+intellige:
+intellig:
+intelli:
+intell:
+intel:
+inte:
+int:
+wisdom:
+wisdo:
+wisd:
+wis:
 	match bank2academy The granite and marble facade of the First Provincial Bank
 	match empath2academy The whitewashed building before you is stark and functional
 	match EndScript A side entrance to the Academy, in the form of a low, bronze gate
@@ -327,6 +341,11 @@ barbar:
 barbar:
 barba:
 barb:
+stamina:
+stamin:
+stami:
+stam:
+sta:
 	match bank2empath The granite and marble facade of the First Provincial Bank
 	match empath2barbarian The whitewashed building before you is stark and functional
 	match academy2empath A side entrance to the Academy, in the form of a low, bronze gate
@@ -433,6 +452,14 @@ cleric:
 cleri:
 cler:
 cle:
+discipline:
+disciplin:
+discipli:
+discipl:
+discip;
+disci:
+disc:
+dis:
 	match bank2academy The granite and marble facade of the First Provincial Bank
 	match empath2academy The whitewashed building before you is stark and functional
 	match academy2cleric A side entrance to the Academy, in the form of a low, bronze gate
@@ -1601,6 +1628,8 @@ echo * * * The Temple.
 echo * * * Dire bears.
 echo * * * The shard Rolagi.
 echo * * * Kssarh.
+echo * * * Stamina, wisdom, intelligence, and discipline training.
+echo * * *
 echo * * * Enter a minimum of three letters.
 echo * * *
 echo
