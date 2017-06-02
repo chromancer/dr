@@ -1,6 +1,6 @@
 echo
 echo * * *
-echo * * * Bow training script.
+echo * * * Crossbow/bow training script. Training '%1'...
 echo * * *
 echo
 
@@ -26,7 +26,7 @@ goto expcheck
 expcheck:
 match exit mind lock
 match loadarrow EXP HELP
-put sk bow
+put sk %1
 matchwait
 
 waitforattack:
@@ -45,7 +45,7 @@ waitforattack:
 exit:
 echo
 echo * * *
-echo * * * Bow is locked.
+echo * * * '%1' is locked.
 echo * * * Exiting and ringing a bell.
 echo * * *
 echo

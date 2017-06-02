@@ -74,7 +74,7 @@ BeginArchery:
 	pausetext 3 You change your
 	put remove my %Bow
 	pausetext 3 You sling a
-	callwith fbow
+	callwith fbow bow
 	pause 2
 	put wear my %Bow
 	pause 2
