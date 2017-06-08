@@ -4,7 +4,7 @@ echo * * * Research.
 echo * * *
 echo
 
-setvariable resmana 20
+setvariable resmana 16
 
 if_1 goto gaf
 
@@ -33,8 +33,11 @@ nextmagic:
 
 gaf:
 	put prep gaf %resmana
-	waitfor You feel fully prepared to cast your spell.
 	pause 1
+	put charge my arm 32
+	pause 1
+	put invoke my arm
+	waitfor You feel fully prepared to cast your spell.
 	put cast
 	goto research
 

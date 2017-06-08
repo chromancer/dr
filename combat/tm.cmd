@@ -76,7 +76,7 @@ match Arrange You arrange
 match Arrange You begin to arrange
 match Arrange You continue arranging
 match Skin You complete arranging
-put arrange for skin
+put arrange
 matchwait 3
 
 Skin:

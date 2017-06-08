@@ -52,10 +52,10 @@ Locksmith:
 	callwith locksmith careful blind
 	pause 1
 
-Mech:
-
-	callwith braid grass urn
-	pause 1
+#Mech:
+#
+#	callwith braid grass urn
+#	pause 1
 
 End:
 

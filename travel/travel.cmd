@@ -8393,39 +8393,29 @@ goto %1
 
 WAITONSOUTHGONDOLA:
 put s
-;put hide
 pause
 ECHO
-ECHO ================================
 ECHO * * * Riding south over the great chasm of the Obsidian Pass towards Shard, the Crystal City
-ECHO ================================
 ECHO
-pause 60
+pause 10
 ECHO
-ECHO ================================
 ECHO * * * Dragon Priests make their home in western Ilithi and southern Forfedhdar
 ECHO * * * Many of the deadly creatures that roam Ilithi were brought by the Dragon Priests
 ECHO * * * They summoned the Vykathi of the hive and the Frostweavers in the Dragonspine Mountains
 ECHO * * * They created the Adan'f from lizards
-ECHO ================================
 ECHO
-pause 60
+pause 10
 ECHO
-ECHO ================================
 ECHO * * * Ferdahl Alec, son of Corik and father to Kukalakai, built the gondola to connect Ilithi to the Mountain Elves.
 ECHO * * * The Mountain Elves, led by Queen Morganae, were responsible for maintaining the gondola.
 ECHO * * * However, one day Morganae's only daughter, Princess Anlorahle, was slaughtered on the gondola by a snow beast sent by Necromancer Sidhlot.
 ECHO * * * Since that day the Mountain Elves have abandoned the gondola, yet it still slowly drifts between the platforms, as if pushed by some ghostly hand.
-ECHO ================================
 ECHO
-pause 60
+pause 10
 ECHO
-ECHO ================================
 ECHO * * * A switchback trail outside the south platform leads beneath the gondola and to many creatures,
 ECHO * * * including snowbeasts, gargoyles, frostweavers, red leucros, blade spiders, and la'tami
-ECHO ================================
 ECHO
-pause
 match GETOFFSOUTHGONDOLA With a soft bump, the gondola
 match WAITONSOUTHGONDOLA YOU HAVE BEEN IDLE
 matchwait

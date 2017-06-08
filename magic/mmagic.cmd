@@ -5,14 +5,14 @@ echo * * *
 
 setvariable UtiSpell rf
 setvariable UtiCharge 9
-setvariable UtiPrep 9
+setvariable UtiPrep 11
 
 setvariable WardSpell col
-setvariable WardCharge 3
+setvariable WardCharge 4
 setvariable WardPrep 15
 
 setvariable AugSpell seer
-setvariable AugCharge 3
+setvariable AugCharge 4
 setvariable AugPrep 15
 
 setvariable Attune attune

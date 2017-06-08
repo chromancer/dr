@@ -12,7 +12,7 @@
 	setvariable LightThrown bola
 	setvariable Polearm spear
 	setvariable HeavyThrown spear
-	setvariable Bow shortbow
+	setvariable Bow bow
 
 CheckHands:
 	match WearShield shield
@@ -42,7 +42,7 @@ StanceChange:
 
 LightThrown:
 	put get my %LightThrown
-	callwith throw_disable %LightThrown lt yes
+	callwith throw_disable %LightThrown lt 1
 	put stow my %LightThrown
 	pause 2
 
@@ -64,7 +64,7 @@ Brawling:
 HeavyThrown:
 
 	put get my %HeavyThrown
-	callwith throw_disable %HeavyThrown ht yes
+	callwith throw_disable %HeavyThrown ht 1
 	put stow my %HeavyThrown
 	pausetext 3 You stow
 
@@ -78,7 +78,7 @@ BeginArchery:
 	pause 2
 	put wear my %Bow
 	pause 2
-	call getarr
+	call getarr arrow
 	pause 2
 
 End:

@@ -182,6 +182,12 @@ pause 1
 goto lock_ident
 matchwait
 
+stow_lockpick:
+pause 1
+put stow lockpick
+pause 1
+goto lock_ident
+
 lock_ident:
 pause 1
 match notdisarmed making any chance of picking it unlikely.
@@ -211,6 +217,7 @@ match lock_ident_s jump off a cliff and save yourself the frustration of attempt
 match get_lockpick Find a more appropriate tool and try again!
 match lock_pick Somebody has already inspected
 match lock_pick It's not even locked, why bother?
+match stow_lockpick If you're going to use a lockpick from the lockpick ring you'd better have an empty hand first.
 put pick my %box iden
 matchwait
 

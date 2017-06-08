@@ -240,7 +240,6 @@ setDestination_Ratha:
 setDestinatoin_Cartman:
 setDestination_Lomtaun:
 setDestination_Undarverjah:
-setDestination_Underweargnome:
  setvariable Destination Erekinzil
  setvariable Pillar Fortune
  goto prepMoongate
@@ -306,7 +305,7 @@ StartIsEnd:
 match exitAP %Destination
  match toAxis none
  put look
-   matchwait
+  matchwait
 
 toAxis:
 counter set %stepsToAxis
@@ -314,20 +313,20 @@ counter set %stepsToAxis
  setvariable stepsToAxis %c
 
  toAxis1:
-  match wait_toAxis1 ...wait
-  match wait_toAxis1 Sorry, you may only type
-  match toAxis_N the microcosm is to the north.
-  match toAxis_NE the microcosm is to the northeast.
-  match toAxis_E the microcosm is to the east.
-  match toAxis_SE the microcosm is to the southeast.
-  match toAxis_S the microcosm is to the south.
-  match toAxis_SW the microcosm is to the southwest.
-  match toAxis_W the microcosm is to the west.
-  match toAxis_NW the microcosm is to the northwest.
-  match error_expanse You cannot sense even a single thread of Lunar energy
-  match error_dead You are a ghost!
-  put perceive
-  matchwait
+ match wait_toAxis1 ...wait
+ match wait_toAxis1 Sorry, you may only type
+ match toAxis_N the microcosm is to the north.
+ match toAxis_NE the microcosm is to the northeast.
+ match toAxis_E the microcosm is to the east.
+ match toAxis_SE the microcosm is to the southeast.
+ match toAxis_S the microcosm is to the south.
+ match toAxis_SW the microcosm is to the southwest.
+ match toAxis_W the microcosm is to the west.
+ match toAxis_NW the microcosm is to the northwest.
+ match error_expanse You cannot sense even a single thread of Lunar energy
+ match error_dead You are a ghost!
+ put perceive
+ matchwait
 
 toAxis_N:
  match wait_toAxis_N ...wait
@@ -440,20 +439,20 @@ fromAxis:
  setvariable stepsFromAxis %c
 
  fromAxis1:
-  match wait_fromAxis1 ...wait
-  match wait_fromAxis1 Sorry, you may only type
-  match fromAxis_N the conduit lies north.
-  match fromAxis_NE the conduit lies northeast.
-  match fromAxis_E the conduit lies east.
-  match fromAxis_SE the conduit lies southeast.
-  match fromAxis_S the conduit lies south.
-  match fromAxis_SW the conduit lies southwest.
-  match fromAxis_W the conduit lies west.
-  match fromAxis_NW the conduit lies northwest.
-  match error_expanse You cannot sense even a single thread of Lunar energy
-  match error_dead You are a ghost!
-  put perceive
-  matchwait
+ match wait_fromAxis1 ...wait
+ match wait_fromAxis1 Sorry, you may only type
+ match fromAxis_N the conduit lies north.
+ match fromAxis_NE the conduit lies northeast.
+ match fromAxis_E the conduit lies east.
+ match fromAxis_SE the conduit lies southeast.
+ match fromAxis_S the conduit lies south.
+ match fromAxis_SW the conduit lies southwest.
+ match fromAxis_W the conduit lies west.
+ match fromAxis_NW the conduit lies northwest.
+ match error_expanse You cannot sense even a single thread of Lunar energy
+ match error_dead You are a ghost!
+ put perceive
+ matchwait
 
 fromAxis_N:
  match wait_fromAxis_N ...wait
@@ -547,7 +546,7 @@ exitAP:
  put prep moongate
 
  match error_UnknownShard You do not recognize this shard
- match exitAP_cast     You feel fully prepared
+ match exitAP_cast You feel fully prepared
  put focus %Destination
  matchwait
 
@@ -555,7 +554,7 @@ exitAP_cast:
  match wait_exitAP_cast ...wait
  match wait_exitAP_cast Sorry, you may only type
  match harnessEmergency The spell goes awry!
- match release      You attempt to open an astral
+ match release You attempt to open an astral
  put cast %Destination
  matchwait
 
@@ -818,52 +817,50 @@ wait_enterAP100:
 # Errors
 error_UnknownShard:
  echo
- echo ERROR:  You do not know this shard yet!
- echo   "study %Start" to learn this shard.
+ echo ERROR: You do not know this shard yet!
+ echo  "study %Start" to learn this shard.
  echo
- echo   Until this shard is learned, you can not enter
- echo   or exit the Astral Planes here.
+ echo  Until this shard is learned, you can not enter
+ echo  or exit the Astral Planes here.
  echo
- echo   Don't forget to "release" if it is safe to do so!
+ echo  Don't forget to "release" if it is safe to do so!
  echo
- echo   If you are still in the Astral Plane, find your
- echo   way to the nearest known shard, ASAP!
+ echo  If you are still in the Astral Plane, find your
+ echo  way to the nearest known shard, ASAP!
  goto cleanup
 error_NoArguments:
  echo
- echo ERROR:  This script requires a name for your destination.
- echo   Please see the starting text for a list.
- echo   Proper usage is ".at destination"
+ echo ERROR: This script requires a name for your destination.
+ echo  Please see the starting text for a list.
+ echo  Proper usage is ".at destination"
  echo
  goto cleanup
 error_badStart:
  echo
- echo ERROR:  You are not at a known Grazhir shard
- echo   and you either lack the 100th ability or
- echo  did not include a 4th variable!
+ echo * * * ERROR: You are not at a known Grazhir shard
+ echo * * * and you either lack the 100th ability or
+ echo * * * did not include a 4th variable!
  echo
  goto cleanup
 error_expanse:
  echo
- echo * * * Uh oh, you're trapped in the grey expanse.
- echo * * * You may get out, but it isn't likely.  Good luck!
+ echo * * * Expanse.
  echo
- echo * * * Statistics:  %stepsToAxis from %Start to Axis
- echo * * * Statistics:  %stepsFromAxis from Axis to %Destination
+ echo * * * Statistics: %stepsToAxis from %Start to Axis
+ echo * * * Statistics: %stepsFromAxis from Axis to %Destination
  goto cleanup
 error_dead:
  echo
- echo * * * Uh oh, you didn't survive this trip.
- echo * * * I hope the empath likes extra crispy!
+ echo * * * Fried.
  echo
- echo Statistics:  %stepsToAxis from %Start to Axis
- echo Statistics:  %stepsFromAxis from Axis to %Destination
+ echo Statistics: %stepsToAxis from %Start to Axis
+ echo Statistics: %stepsFromAxis from Axis to %Destination
  goto cleanup
 labelError:
  echo
- echo ERROR:  You did not type in a valid name for your destination.
- echo   Please see the starting text for a list.
- echo   If you did type in a listed destination or got this error
- echo   while already moving, this this is a bug with the script's labels.
+ echo ERROR: You did not type in a valid name for your destination.
+ echo  Please see the starting text for a list.
+ echo  If you did type in a listed destination or got this error
+ echo  while already moving, this this is a bug with the script's labels.
  echo
  goto cleanup

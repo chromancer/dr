@@ -173,7 +173,7 @@ ArrangeDead:
 	match ArrangeDead You begin to arrange
 	match ArrangeDead You continue arranging
 	match SkinDead You complete arranging
-	put arrange for skin
+	put arrange
 	matchwait 3
 
 SkinDead:

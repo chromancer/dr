@@ -1,6 +1,6 @@
 findarrow:
 match ImmediateEnd Obvious paths:
-match getarrow arrow
+match getarrow %1
 put look
 matchwait
 
@@ -10,11 +10,11 @@ match stowarrow You pick up
 match Unload You must unload the
 match stowarrow You are already holding that
 match stowarrow You pull a
-put get arrow
+put get %1
 matchwait
 
 stowarrow:
-put stow arrow
+put stow %1
 pausepart 1
 goto getarrow
 
@@ -23,10 +23,10 @@ put unload
 goto exit
 
 exit:
-put stow arrow
-echo * * * No accessible arrows remain.
+put stow %1
+echo * * * No accessible %1s remain.
 exit
 
 ImmediateEnd:
-echo * * * I don't see any arrows to pick up.
+echo * * * I don't see any %1s to pick up.
 exit
