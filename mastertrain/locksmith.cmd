@@ -243,14 +243,15 @@ pause 1
 goto lock_morecheck
 lock_pick_f:
 pause 1
-# This checks experience for us.
-match AddExpStop nearly locked
-match AddExpStop mind lock
-match AddExpContinue EXP HELP
-put sk locksmith
-matchwait
-AddExpContinue:
-# Remove between these lines to restore to normal.
+  # If we include a third variable, don't check experience.
+  if_3 goto AddExpContinue
+  match AddExpStop nearly locked
+  match AddExpStop mind lock
+  match AddExpContinue EXP HELP
+  put sk locksmith
+  matchwait
+  AddExpContinue:
+  # Remove between these lines to restore to normal.
 pause 1
 goto lock_pick
 lock_morecheck:
