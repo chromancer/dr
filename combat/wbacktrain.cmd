@@ -78,7 +78,7 @@ BeginArchery:
 	pause 2
 	put wear my %Bow
 	pause 2
-	call getarr arrow
+	callwith getarr arrow
 	pause 2
 
 End:
