@@ -13,6 +13,7 @@
 	setvariable Polearm spear
 	setvariable HeavyThrown spear
 	setvariable Bow bow
+	setvariable Crossbow crossbow
 
 CheckHands:
 	match WearShield shield
@@ -54,7 +55,7 @@ Polearm:
 	put get %Polearm
 	pause 1
 	put stow my %Polearm
-	pause 10
+	pause 2
 
 Brawling:
 

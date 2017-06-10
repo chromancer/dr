@@ -63,7 +63,7 @@ SmallBlunt:
 	put stance evasion
 	pause 1
 	put get my %SmallBlunt
-	callwith fle [Small Blunt] %1
+	callwith fled [Small Blunt] %1
 	put stow my %SmallBlunt
 	pause 2
 
