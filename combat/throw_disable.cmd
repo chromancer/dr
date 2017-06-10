@@ -6,21 +6,10 @@ echo
 
 setvariable Period 0
 
-matchstore Arrange screams one last time and lies still
-matchstore Arrange shudders and then turns belly up
-matchstore Arrange falls to the ground and lies still
-matchstore Arrange shudders and then suddenly stops all movement
-matchstore Arrange collapses with a heavy thud
-matchstore Arrange growls one last time and collapses
-matchstore Arrange until it ceases all movement
-matchstore Arrange lets loose a blood-curdling howl and falls into a heap
-matchstore Arrange lets loose a blood-curdling howl and goes still
-matchstore Arrange thrashes about wildly for a few seconds, then lies still
-matchstore Arrange shudders, then goes limp
-matchstore Arrange coils and uncoils rapidly before expiring
-matchstore Arrange closing its eyes forever
-matchstore Arrange growls low and dies
-matchstore Arrange and lies still
+matchstore ArrangeDead balance]
+matchstore ArrangeDead balanced]
+matchstore ArrangeDead balance.]
+matchstore ArrangeDead balanced.]
 matchstore HoldingForEnemy There is nothing else to face
 matchstore GetSpear Roundtime
 

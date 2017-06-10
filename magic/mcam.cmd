@@ -31,6 +31,7 @@ waitfor roundtime
 cast:
 put cast
 pausetext 1 [is on the wrong side of Elanthia] goto SetMoonAlign
+put rel rf
 goto expcheck
 
 ResetMoonAlign:

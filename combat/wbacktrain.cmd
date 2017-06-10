@@ -58,7 +58,7 @@ Polearm:
 
 Brawling:
 
-	callwith fle brawling %1
+	callwith fled brawling
 	pause 2
 
 HeavyThrown:

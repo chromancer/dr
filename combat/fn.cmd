@@ -117,21 +117,10 @@ FEINT:
 	goto ATTACK
 
 ATTACK:
-	match ArrangeDead screams one last time and lies still
-	match ArrangeDead falls to the ground and lies still
-	match ArrangeDead shudders and then suddenly stops all movement
-	match ArrangeDead collapses with a heavy thud
-	match ArrangeDead growls one last time and collapses
-	match ArrangeDead until it ceases all movement
-	match ArrangeDead lets loose a blood-curdling howl and falls into a heap
-	match ArrangeDead lets loose a blood-curdling howl and goes still
-	match ArrangeDead thrashes about wildly for a few seconds, then lies still
-	match ArrangeDead shudders, then goes limp
-	match ArrangeDead coils and uncoils rapidly before expiring
-	match ArrangeDead closing its eyes forever
-	match ArrangeDead growls low and dies
-	match ArrangeDead and lies still
-	match ArrangeDead screams and collapses
+	match ArrangeDead balance]
+	match ArrangeDead balanced]
+	match ArrangeDead balance.]
+	match ArrangeDead balanced.]
 	match WaitAnalyze if you used a melee weapon
 	match RANGE You aren't close enough
 	match ANALYZE Roundtime

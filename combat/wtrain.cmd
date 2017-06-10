@@ -5,7 +5,7 @@
 	echo * * * First variable is the primary enemy you're using.
 	echo * * *
 
-	setvariable SmallEdged kris
+	setvariable SmallEdged foil
 	setvariable SmallBlunt bola
 
 	setvariable TargetSpell pd

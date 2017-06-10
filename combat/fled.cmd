@@ -27,10 +27,24 @@ matchstore HoldingForEnemy There is nothing else to face
 matchstore Attack Roundtime
 
 Attack:
+if Period == 0 goto CheckDebilitate
+AttackBranch:
 if Period == 5 goto CheckExp
 calculate Period add 1
 put attack
 storewait 3
+goto Attack
+
+CheckDebilitate:
+if_2 goto Debilitate
+goto AttackBranch
+
+Debilitate:
+calculate Period add 1
+put prep sleep 11
+waitfor You feel fully prepared
+put cast
+pause 2
 goto Attack
 
 CheckExp:
@@ -67,7 +81,7 @@ matchwait 3
 SkinDead:
 put skin
 pausetext 2 roundtime
-put loot %2
+put loot
 pause 2
 goto Attack
 
@@ -81,4 +95,4 @@ HoldingForEnemy:
 	echo * * * Searching for targets...
 	echo
 	matchwait 10
-	goto HOLD
+	goto HoldingForEnemy
