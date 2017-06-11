@@ -10,6 +10,18 @@ matchstore Arrange balance]
 matchstore Arrange balanced]
 matchstore Arrange balance.]
 matchstore Arrange balanced.]
+matchstore Arrange and lies still
+matchstore Arrange shudders and then suddenly stops all movement
+matchstore Arrange collapses with a heavy thud
+matchstore Arrange until it ceases all movement
+matchstore Arrange lets loose a blood-curdling howl
+matchstore Arrange then lies still
+matchstore Arrange then goes limp
+matchstore Arrange coils and uncoils rapidly before expiring
+matchstore Arrange closing its eyes forever
+matchstore Arrange and dies
+matchstore Arrange and lies still
+matchstore Arrange and collapses
 matchstore CheckForEnemy pattern dissipates with the loss of your target
 matchstore ReleaseSpell Your target pattern dissipates because
 

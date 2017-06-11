@@ -60,10 +60,11 @@ SmallBlunt:
 	echo * * *
 	echo
 
+	pause 1
 	put stance evasion
 	pause 1
 	put get my %SmallBlunt
-	callwith fled [Small Blunt] %1
+	callwith fn [Small Blunt] %1
 	put stow my %SmallBlunt
 	pause 2
 
@@ -107,7 +108,7 @@ TargetedMagic:
 	echo * * * Now training targeted magic.
 
 	put stance evasion
-	callwith tm %TargetSpell %TargetMana %1
+	callwith tm %TargetSpell %TargetMana
 	pause 1
 	put stance custom
 

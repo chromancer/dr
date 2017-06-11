@@ -4,7 +4,6 @@
 	echo * * * DO NOT USE AT LEVEL!
 	echo * * *
 	echo * * * Begin this script in any room where enemies spawn.
-	echo * * * First variable is the primary enemy you're using.
 	echo * * *
 
 	setvariable SmallEdged kris
@@ -14,6 +13,7 @@
 	setvariable HeavyThrown spear
 	setvariable Bow bow
 	setvariable Crossbow crossbow
+	setvariable LargeEdged moonblade
 
 CheckHands:
 	match WearShield shield
