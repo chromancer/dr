@@ -13,7 +13,10 @@
 	setvariable HeavyThrown spear
 	setvariable Bow bow
 	setvariable Crossbow crossbow
-	setvariable LargeEdged moonblade
+	setvariable LargeEdged abassi
+
+	setvariable DebilSpell sleep
+	setvariable DebilMana 11
 
 CheckHands:
 	match WearShield shield
@@ -41,11 +44,19 @@ StanceChange:
 	put stance parry
 	pausetext 3 You change your
 
-LightThrown:
-	put get my %LightThrown
-	callwith throw_disable %LightThrown lt 1
-	put stow my %LightThrown
-	pause 2
+#LightThrown:
+#	put get my %LightThrown
+#	callwith throw_disable %LightThrown lt 1
+#	put stow my %LightThrown
+#	pause 2
+
+LargeEdged:
+
+	put get my %LargeEdged
+	callwith fled le %DebilSpell %DebilMana
+	pause 1
+	put stow %LargeEdged
+	pause 1
 
 Polearm:
 
@@ -60,14 +71,27 @@ Polearm:
 Brawling:
 
 	callwith fled brawling
-	pause 2
+	pause 1
 
-HeavyThrown:
+#HeavyThrown:
+#
+#	put get my %HeavyThrown
+#	callwith throw_disable %HeavyThrown ht 1
+#	put stow my %HeavyThrown
+#	pausetext 3 You stow
 
-	put get my %HeavyThrown
-	callwith throw_disable %HeavyThrown ht 1
-	put stow my %HeavyThrown
-	pausetext 3 You stow
+BeginCrossbow:
+
+	put stance evasion
+	pausetext 3 You change your
+	put get my %Crossbow
+	pausetext 3 You get
+	callwith fbow crossbow %DebilSpell %DebilMana
+	pause 1
+	put stow my %Crossbow
+	pause 1
+	callwith getarr bolt
+	pause 1
 
 BeginArchery:
 
@@ -76,17 +100,22 @@ BeginArchery:
 	put remove my %Bow
 	pausetext 3 You sling a
 	callwith fbow bow
-	pause 2
+	pause 1
 	put wear my %Bow
-	pause 2
+	pause 1
 	callwith getarr arrow
-	pause 2
+	pause 1
+
+PreEnd:
+	put stance custom
+	pause 1
 
 End:
 
 	echo
 	echo * * *
 	echo * * * This script will exit in 5 seconds.
+	echo * * * Exiting and ringing a bell.
 	echo * * *
 	echo
 

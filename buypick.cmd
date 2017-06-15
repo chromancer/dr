@@ -21,8 +21,9 @@ put put my lockpick on my ring
 waitfor You put
 
 checknumber:
+calculate TotalLockpicks dec
 echo * * * Checking remaining lockpicks... number is %TotalLockpicks.
-if %TotalLockpicks > 0 goto buypick
+if TotalLockpicks > 0 goto buypick
 goto exit
 
 exit:

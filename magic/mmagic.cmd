@@ -29,7 +29,6 @@ SectionUtility:
 	echo
 	pause 1
 	callwith mcam utility %UtiSpell %UtiCharge %UtiPrep
-	echo * * * Now ringing a bell.
 	echo * * * Waiting for attunement.
 	waitfor fully attuned
 

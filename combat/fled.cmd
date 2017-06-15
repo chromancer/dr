@@ -8,21 +8,10 @@ echo
 
 setvariable Period 0
 
-matchstore ArrangeDead screams one last time and lies still
-matchstore ArrangeDead falls to the ground and lies still
-matchstore ArrangeDead shudders and then suddenly stops all movement
-matchstore ArrangeDead collapses with a heavy thud
-matchstore ArrangeDead growls one last time and collapses
-matchstore ArrangeDead until it ceases all movement
-matchstore ArrangeDead lets loose a blood-curdling howl and falls into a heap
-matchstore ArrangeDead lets loose a blood-curdling howl and goes still
-matchstore ArrangeDead thrashes about wildly for a few seconds, then lies still
-matchstore ArrangeDead shudders, then goes limp
-matchstore ArrangeDead coils and uncoils rapidly before expiring
-matchstore ArrangeDead closing its eyes forever
-matchstore ArrangeDead growls low and dies
-matchstore ArrangeDead and lies still
-matchstore ArrangeDead screams and collapses
+matchstore ArrangeDead balance]
+matchstore ArrangeDead balanced]
+matchstore ArrangeDead balance.]
+matchstore ArrangeDead balanced.]
 matchstore HoldingForEnemy There is nothing else to face
 matchstore Attack Roundtime
 
@@ -41,11 +30,19 @@ goto AttackBranch
 
 Debilitate:
 calculate Period add 1
-put prep sleep 11
-waitfor You feel fully prepared
-put cast
+put prep %2 %3
+waitfor You feel fully prepared to cast your spell.
+goto DebilCast
+
+DebilWait:
 pause 2
-goto Attack
+DebilCast:
+match Attack You gesture
+match Attack You don't have a spell prepared
+match DebilWait You can't
+match DebilWait at what?
+put cast
+matchwait
 
 CheckExp:
 echo
@@ -86,11 +83,11 @@ pause 2
 goto Attack
 
 HoldingForEnemy:
-	match ANALYZE melee range on you
-	match ANALYZE balanced and
-	match ANALYZE balance and
-	match analyze balanced with
-	match analyze balance with
+	match Attack melee range on you
+	match Attack balanced and
+	match Attack balance and
+	match Attack balanced with
+	match Attack balance with
 	echo
 	echo * * * Searching for targets...
 	echo

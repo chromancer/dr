@@ -7,6 +7,7 @@ matchwait
 getarrow:
 match exit from inside your
 match stowarrow You pick up
+match getarrow You grab hold
 match Unload You must unload the
 match stowarrow You are already holding that
 match stowarrow You pull a

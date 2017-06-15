@@ -20,7 +20,7 @@ Position:
 Begin:
 
 	pause 1
-	run perform folk quiet
+	run perform folk confident
 
 Scholarship:
 
