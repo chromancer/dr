@@ -58,6 +58,11 @@ LargeEdged:
 	put stow %LargeEdged
 	pause 1
 
+Brawling:
+
+	callwith fled brawling
+	pause 1
+
 Polearm:
 
 	put get my %Polearm
@@ -67,11 +72,6 @@ Polearm:
 	pause 1
 	put stow my %Polearm
 	pause 2
-
-Brawling:
-
-	callwith fled brawling
-	pause 1
 
 #HeavyThrown:
 #

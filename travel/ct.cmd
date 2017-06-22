@@ -92,6 +92,18 @@ wis:
 # Bank node.
 #
 
+tell:
+telle:
+teller:
+	match EndScript [Provincial Bank, Teller]
+	match empath2bank The whitewashed building before you is stark and functional
+	match academy2bank A side entrance to the Academy, in the form of a low, bronze gate
+	match bank2teller The granite and marble facade of the First Provincial Bank
+	match PathToNode Obvious paths:
+	match PathToNode Obvious exits:
+	put look
+	matchwait
+
 vau:
 vaul:
 vault:
@@ -130,6 +142,21 @@ gem:
 	match empath2bank The whitewashed building before you is stark and functional
 	match academy2bank A side entrance to the Academy, in the form of a low, bronze gate
 	match bank2gem The granite and marble facade of the First Provincial Bank
+	match PathToNode Obvious paths:
+	match PathToNode Obvious exits:
+	put look
+	matchwait
+
+eng:
+engi:
+engin:
+engine:
+enginee:
+engineer:
+	match EndScript [Engineering Society, Crafting Supplies]
+	match empath2bank The whitewashed building before you is stark and functional
+	match academy2bank A side entrance to the Academy, in the form of a low, bronze gate
+	match bank2engineer The granite and marble facade of the First Provincial Bank
 	match PathToNode Obvious paths:
 	match PathToNode Obvious exits:
 	put look
@@ -570,10 +597,12 @@ PathToNode:
 	match river2bank [Southern Trade Route, Segoltha South Bank]
 
 	match vault2bank A sturdy vault, set in the back wall, stands ready for your use
+	match teller2bank [Provincial Bank, Teller]
 
 	match gem2bank [Grisgonda's, Appraisal Room]
 	match pawn2bank Cormyn's idea of elegance
 	match outfitting2bank [Outfitting Society, Entry Hall]
+	match engineer2bank [Engineering Society, Crafting Supplies]
 	match entergate [Market Plaza, Foyer]
 	match market2bank [The Crossing, Mongers' Square]
 	match eg2bank [Eastern Tier, Outside Gate]
@@ -1598,6 +1627,40 @@ move e
 move se
 goto %1
 
+bank2engineer:
+move sw
+move go longbow bridge
+move n
+move w
+move nw
+move n
+move w
+move w
+move go building
+goto %1
+
+engineer2bank:
+move go mistwood door
+move e
+move e
+move s
+move se
+move e
+move s
+move go longbow bridge
+move ne
+goto %1
+
+bank2teller:
+move go bank
+move go window
+goto %1
+
+teller2bank:
+move out
+move out
+goto %1
+
 ErrorDestination:
 echo
 echo * * *
@@ -1616,12 +1679,12 @@ echo * * * Outside all gates.
 echo * * * Outside all guilds.
 echo * * * The guardhouse.
 echo * * * The bank.
-echo * * * The tannery.
+echo * * * The tannery, indoors.
 echo * * * Catrox (for metal repair).
 echo * * * Randal (for non-metal repair).
 echo * * * The market plaza.
 echo * * * The brook.
-echo * * * The Academy.
+echo * * * The Academy at the low bronze gate.
 echo * * * The hospital.
 echo * * * The ruins.
 echo * * * The Temple.
@@ -1629,6 +1692,7 @@ echo * * * Dire bears.
 echo * * * The shard Rolagi.
 echo * * * Kssarh.
 echo * * * Stamina, wisdom, intelligence, and discipline training.
+echo * * * Inside the engineering or outfitting crafting societies.
 echo * * *
 echo * * * Enter a minimum of three letters.
 echo * * *
