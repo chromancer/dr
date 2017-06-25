@@ -4,6 +4,8 @@ echo * * * Melee fighting loop with periodic experience check.
 echo * * *
 echo
 
+action [override] goto EarlyEnd
+
 setvariable Period 0
 
 ANALYZE:
@@ -192,3 +194,7 @@ CheckExpExit:
 	echo * * *
 	echo
 	exit
+
+EarlyEnd:
+echo * * * Script overridden, exiting...
+exit

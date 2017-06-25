@@ -40,9 +40,9 @@ WearShield:
 	put wear shield
 	pause 1
 
-StanceChange:
-	put stance parry
-	pausetext 3 You change your
+#StanceChange:
+#	put stance parry
+#	pausetext 3 You change your
 
 #LightThrown:
 #	put get my %LightThrown
@@ -60,13 +60,13 @@ LargeEdged:
 
 Brawling:
 
-	callwith fled brawling
+	callwith fled brawling %DebilSpell %DebilMana
 	pause 1
 
 Polearm:
 
 	put get my %Polearm
-	callwith fn polearm %1
+	callwith fled polearm %DebilSpell %DebilMana
 	pause 1
 	put get %Polearm
 	pause 1
@@ -99,7 +99,7 @@ BeginArchery:
 	pausetext 3 You change your
 	put remove my %Bow
 	pausetext 3 You sling a
-	callwith fbow bow
+	callwith fbow bow %DebilSpell %DebilMana
 	pause 1
 	put wear my %Bow
 	pause 1

@@ -45,10 +45,9 @@
 
 setvariable Toolbag rucksack
 setvariable Bookbag rucksack
-setvariable ChapterEight 0
 
 startitem:
-goto chaptereight%ChapterEight
+goto chaptereight%2
 
 chaptereight0:
   pause 1

@@ -4,10 +4,17 @@ echo * * * Crossbow/bow training script. Training '%1'...
 echo * * *
 echo
 
-action "You feel fully prepared to cast your spell" put "cast"
+action [You feel fully prepared to cast your spell] put [cast]
 
 if_1 goto begin
 goto instructions
+
+instructions:
+echo * * * Fbow takes 1 or 3 arguments.
+echo * * * First argument is skill to train (bow or crossbow).
+echo * * * Second argument is a debilitation battle spell and third is the mana to prep it with.
+echo * * * This would help you hit an enemy that is too high for you to hit normally.
+goto exit
 
 begin:
 put stance evasion
@@ -42,8 +49,12 @@ pause 1
 goto aimarrow
 
 firearrow:
+match ArrangeDead balance]
+match ArrangeDead balanced]
+match ArrangeDead balance.]
+match ArrangeDead balanced.]
 put fire
-pause 1
+matchwait 1
 
 goto expcheck
 
@@ -65,12 +76,23 @@ waitforattack:
 	matchwait 10
 	goto waitforattack
 
-instructions:
-echo * * * Fbow takes 1 or 3 arguments.
-echo * * * First argument is skill to train (bow or crossbow).
-echo * * * Second argument is a debilitation battle spell and third is the mana to prep it with.
-echo * * * This would help you hit an enemy that is too high for you to hit normally.
-goto exit
+ArrangeDead:
+action [You feel fully prepared to cast your spell] clear
+match HoldingForEnemy Arrange what?
+match ArrangeDead You arrange
+match ArrangeDead You begin to arrange
+match ArrangeDead You continue arranging
+match SkinDead You complete arranging
+put arrange
+matchwait 3
+
+SkinDead:
+put skin
+pausetext 1 roundtime
+put loot
+action [You feel fully prepared to cast your spell] put [cast]
+waitfor Roundtime
+goto Attack
 
 noammo:
 echo * * * Attempting to get bolts/arrows.

@@ -8,11 +8,11 @@
 	setvariable SmallEdged foil
 	setvariable SmallBlunt bola
 
-	setvariable TargetSpell pd
+	setvariable TargetSpell do
 	setvariable TargetMana 13
 
-	setvariable DebiSpell dazzle
-	setvariable DebiMana 12
+	setvariable DebilSpell sleep
+	setvariable DebilMana 12
 
 	setvariable UsedCambrinth armband
 
@@ -33,24 +33,24 @@ SmallEdged:
 		echo * * *
 		echo
 
-		put stance evasion
+		put stance set 100 82 0 100
 		pause 1
 		put get my %SmallEdged
 		callwith fn [Small Edged] %1
 		put stow my %SmallEdged
 		pause 3
 
-DebilMagic:
-
-	echo
-	echo * * *
-	echo * * * Now training debilitation.
-	echo * * *
-	echo
-
-	put stance custom
-	pause 1
-	callwith mdeb %DebiSpell %DebiMana %1
+#DebilMagic:
+#
+#	echo
+#	echo * * *
+#	echo * * * Now training debilitation.
+#	echo * * *
+#	echo
+#
+#	put stance set 100 100 0 0
+#	pause 1
+#	callwith mdeb %DebilSpell %DebilMana %1
 
 SmallBlunt:
 
@@ -61,10 +61,11 @@ SmallBlunt:
 	echo
 
 	pause 1
-	put stance evasion
+	put stance set 100 82 0 100
 	pause 1
 	put get my %SmallBlunt
-	callwith fn [Small Blunt] %1
+	# callwith fn [Small Blunt] %1
+	callwith fled [Small Blunt] %DebilSpell %DebilMana
 	put stow my %SmallBlunt
 	pause 2
 

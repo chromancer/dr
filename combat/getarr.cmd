@@ -11,8 +11,15 @@ match getarrow You grab hold
 match Unload You must unload the
 match stowarrow You are already holding that
 match stowarrow You pull a
+match stowarrow You pull your
+match stand stand up
+match stand standing
 put get %1
 matchwait
+
+stand:
+put stand
+goto getarrow
 
 stowarrow:
 put stow %1

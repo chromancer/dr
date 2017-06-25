@@ -6,6 +6,9 @@ echo * * * Second argument: creature to loot.
 echo * * *
 echo
 
+action [override] goto EarlyEnd
+action [You feel fully prepared to cast your spell] goto DebilCast
+
 setvariable Period 0
 
 matchstore ArrangeDead balance]
@@ -31,8 +34,7 @@ goto AttackBranch
 Debilitate:
 calculate Period add 1
 put prep %2 %3
-waitfor You feel fully prepared to cast your spell.
-goto DebilCast
+goto Attack
 
 DebilWait:
 pause 2
@@ -67,6 +69,7 @@ echo
 exit
 
 ArrangeDead:
+action [You feel fully prepared to cast your spell] clear
 match HoldingForEnemy Arrange what?
 match ArrangeDead You arrange
 match ArrangeDead You begin to arrange
@@ -79,7 +82,8 @@ SkinDead:
 put skin
 pausetext 2 roundtime
 put loot
-pause 2
+action [You feel fully prepared to cast your spell] goto DebilCast
+waitfor Roundtime
 goto Attack
 
 HoldingForEnemy:
@@ -93,3 +97,8 @@ HoldingForEnemy:
 	echo
 	matchwait 10
 	goto HoldingForEnemy
+
+EarlyEnd:
+echo * * * Script overridden, exiting...
+put rel spell
+exit

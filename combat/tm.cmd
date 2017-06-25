@@ -22,6 +22,7 @@ matchstore Arrange closing its eyes forever
 matchstore Arrange and dies
 matchstore Arrange and lies still
 matchstore Arrange and collapses
+matchstore Arrange until finally it ceases all movement
 matchstore CheckForEnemy pattern dissipates with the loss of your target
 matchstore ReleaseSpell Your target pattern dissipates because
 

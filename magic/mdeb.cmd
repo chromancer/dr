@@ -6,6 +6,7 @@ waitfor fully prepared to cast your spell
 
 cast:
 put cast %3
+waitfor You gesture
 goto expcheck
 
 expcheck:

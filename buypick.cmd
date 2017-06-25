@@ -1,4 +1,4 @@
-setvariable TotalLockpicks %1 %2
+setvariable TotalLockpicks %1
 
 buypick:
 echo * * * Buying.
